@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Service("fakeStoreProductService")
+@Service("fakeStoreProductService")    //Spring will automatically create the object of class FakeStoreProductService at the time of Project Initialization
 public class FakeStoreProductService implements ProductService {
     private RestTemplate restTemplate;
     private RedisTemplate<String, Object> redisTemplate;
