@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter
+@Getter    //Lombok Usage
 @Setter
 @Entity
 public class Product extends BaseModel {
