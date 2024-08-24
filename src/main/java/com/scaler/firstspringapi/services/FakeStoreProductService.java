@@ -55,8 +55,7 @@ public class FakeStoreProductService implements ProductService {
 
         FakeStoreProductDto fakeStoreProductDto =
                 restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
-                FakeStoreProductDto.class);    //Will show error for List<FakeStoreProductDto>.class because we want to convert respose to FakeStoreProductDto 
-                                               //but Java will say at run time everything is converted to List<Object> so how it will convert? 
+                FakeStoreProductDto.class);     
         //1st param -> URL
         //2nd param -> Response
 
@@ -83,7 +82,9 @@ public class FakeStoreProductService implements ProductService {
     public Page<Product> getAllProducts(int pageNumber, int pageSize) {
 //        FakeStoreProductDto[] fakeStoreProductDtos =
 //                restTemplate.getForObject("https://fakestoreapi.com/products",
-//                        FakeStoreProductDto[].class);
+//                        FakeStoreProductDto[].class);                          //Will show error for List<FakeStoreProductDto>.class because we want to convert respose to FakeStoreProductDto 
+                                                                                //but Java will say at run time everything is converted to List<Object> so how it will convert?.
+                                                                                //Thats why we have used Arrays because they don't have Type Erasure.
 //
 //        //convert List of FakeStoreProductDtos to List of Products
 //        List<Product> response = new ArrayList<>();
