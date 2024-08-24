@@ -55,7 +55,8 @@ public class FakeStoreProductService implements ProductService {
 
         FakeStoreProductDto fakeStoreProductDto =
                 restTemplate.getForObject("https://fakestoreapi.com/products/" + id,
-                FakeStoreProductDto.class);
+                FakeStoreProductDto.class);    //Will show error for List<FakeStoreProductDto>.class because we want to convert respose to FakeStoreProductDto 
+                                               //but Java will say at run time everything is converted to List<Object> so how it will convert? 
         //1st param -> URL
         //2nd param -> Response
 
